@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "com.dikiyhimik.zenject": "https://gitlab.com/plugins19/zenject.git#upm",
+    "com.elestrago.simpleui": "https://gitlab.com/elestrago63/simpleui.git#upm-dev",
+    "com.neuecc.unirx": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
     "com.unity.ai.navigation": "1.1.5",
     "com.unity.collab-proxy": "2.4.4",
     "com.unity.ide.rider": "3.0.31",
