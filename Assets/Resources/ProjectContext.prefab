@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6760168863804083182}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3507478418936713545
 MonoBehaviour:
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers:
   - {fileID: 11400000, guid: ad119bee14791484d9c88b6187f487b9, type: 2}
+  - {fileID: 11400000, guid: 1db0e31c385f1cb42aa0b782f1712f45, type: 2}
   _monoInstallers:
   - {fileID: 4793058584807764364}
   - {fileID: 7006350135643302912}
@@ -60,6 +61,7 @@ MonoBehaviour:
     _displayWarningWhenResolvingDuringInstall: 1
     _validationRootResolveMethod: 0
     _validationErrorResponse: 0
+    _constructorChoiceStrategy: 0
     _signalSettings:
       _defaultSyncMode: 0
       _missingHandlerDefaultResponse: 2

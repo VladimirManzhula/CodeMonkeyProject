@@ -1,6 +1,4 @@
-﻿using SimpleUi.Signals;
-using Ui.Game.Windows;
-using Zenject;
+﻿using Zenject;
 
 namespace Ui.Game
 {
@@ -17,7 +15,6 @@ namespace Ui.Game
 
         public void Initialize()
         {
-            _signalBus.OpenWindow<MenuWindow>();
         }
     }
 }

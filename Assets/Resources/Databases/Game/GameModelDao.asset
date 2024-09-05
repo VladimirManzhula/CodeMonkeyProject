@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea55142707414186a74b13b4233c3fd2, type: 3}
+  m_Name: GameModelDao
+  m_EditorClassIdentifier: 
+  locationView: {fileID: 3998005657951544653, guid: 96f0dbd43ad34594d805124b9fb87a87,
+    type: 3}
+  gameModelVos:
+  - gameViewType: 0
+    gameView: {fileID: 6561588442001358610, guid: 413b1009cf9a69e438ac7f39b2ba58b7,
+      type: 3}
+  - gameViewType: 1
+    gameView: {fileID: 4632764840032320939, guid: a673a67e2b1754f4086cf4a5f3b9403a,
+      type: 3}
+  - gameViewType: 2
+    gameView: {fileID: 6254610591607179962, guid: 25759383aa730f843bf654f75a6d7a71,
+      type: 3}
