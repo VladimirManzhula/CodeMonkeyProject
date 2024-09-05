@@ -1,8 +1,8 @@
 ﻿using Core.Constants;
 using SimpleUi;
-using Ui.Game.Menu;
+using Ui.Menu.Menu;
 
-namespace Ui.Game.Windows
+namespace Ui.Menu.Windows
 {
     public class MenuWindow : WindowBase
     {

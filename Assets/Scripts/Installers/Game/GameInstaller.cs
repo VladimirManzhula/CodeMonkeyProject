@@ -1,5 +1,8 @@
-﻿using Ui.Game;
-using Ui.Game.Windows;
+﻿using Game.Factories.View.Impls;
+using Game.Services.InstantiatingViews.Creators.Impls;
+using Game.Services.InstantiatingViews.Instantiating.Impls;
+using Ui.Game;
+using Ui.Menu.Windows;
 using Zenject;
 
 namespace Installers.Game
@@ -9,7 +12,9 @@ namespace Installers.Game
         public override void InstallBindings()
         {
             BindManagers();
-            BindWindows();
+            BindService();
+            BindViewCreators();
+            BindFactories();
         }
 
         private void BindManagers()
@@ -17,9 +22,21 @@ namespace Installers.Game
             Container.BindInterfacesTo<GameWindowManager>().AsSingle();
         }
 
-        private void BindWindows()
+        private void BindService()
         {
-            Container.BindInterfacesAndSelfTo<MenuWindow>().AsSingle();
+            Container.BindInterfacesTo<InstantiatingViewsService>().AsSingle();
+        }
+        
+        private void BindViewCreators()
+        {
+            Container.BindInterfacesTo<LevelViewCreator>().AsSingle();
+            Container.BindInterfacesTo<PlayerViewCreator>().AsSingle();
+            Container.BindInterfacesTo<CameraViewCreator>().AsSingle();
+        }
+        
+        private void BindFactories()
+        {
+            Container.BindInterfacesTo<GameViewFactory>().AsSingle();
         }
     }
 }
