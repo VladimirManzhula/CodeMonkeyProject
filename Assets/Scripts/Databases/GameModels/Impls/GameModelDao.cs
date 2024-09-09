@@ -4,7 +4,10 @@ using UnityEngine;
 
 namespace Databases.GameModels.Impls
 {
-    [CreateAssetMenu(menuName = "Databases/" + nameof(GameModelDao), fileName = nameof(GameModelDao), order = 0)]
+    [CreateAssetMenu(
+        menuName = "Databases/" + nameof(GameModelDao),
+        fileName = nameof(GameModelDao), order = 0
+    )]
     public class GameModelDao : ScriptableObject, IGameModelDao
     {
         [SerializeField] private LocationView locationView;
