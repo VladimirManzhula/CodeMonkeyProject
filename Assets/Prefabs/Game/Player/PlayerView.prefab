@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5929177944390626581}
   - component: {fileID: 6800563358597689459}
   - component: {fileID: 1013911126005040619}
+  - component: {fileID: 904624439584833635}
   - component: {fileID: 3382499291923362140}
   - component: {fileID: 5139710031903378129}
   m_Layer: 0
@@ -83,6 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 6800563358597689459}
   rotatableComponent: {fileID: 1013911126005040619}
+  playerAnimationComponent: {fileID: 904624439584833635}
   collisionTrigger: {fileID: 5139710031903378129}
   pickingTransform: {fileID: 608731812477854492}
 --- !u!54 &6800563358597689459
@@ -124,6 +126,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be71ebadacb34a5a858d514deaf05fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &904624439584833635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4632764840032320939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d165fcf36f334328b106a9f725c4823b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorController: {fileID: 3782395580470004214}
 --- !u!135 &3382499291923362140
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -225,6 +240,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c5dda3c7cd3cf742afcade5419faeab, type: 3}
+--- !u!95 &3782395580470004214 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6024899996280613204, guid: 1c5dda3c7cd3cf742afcade5419faeab,
+    type: 3}
+  m_PrefabInstance: {fileID: 7485398323195732130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5357083647734959238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3294758251327466532, guid: 1c5dda3c7cd3cf742afcade5419faeab,

@@ -11,6 +11,7 @@ namespace Game.Views.Player
     {
         [SerializeField] private Rigidbody playerRigidbody;
         [SerializeField] private RotatableComponent rotatableComponent;
+        [SerializeField] private PlayerAnimationComponent playerAnimationComponent;
         [SerializeField] private ObservableCollisionTrigger collisionTrigger;
         [SerializeField] private Transform pickingTransform;
 
@@ -21,6 +22,7 @@ namespace Game.Views.Player
         private void OnVelocityChanged(Vector3 value)
         {
             playerRigidbody.velocity = value;
+            playerAnimationComponent.SetWalkableBool(value != Vector3.zero);
         }
 
         private IDisposable _velocityDisposable = Disposable.Empty;
