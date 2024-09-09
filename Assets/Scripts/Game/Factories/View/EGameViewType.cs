@@ -1,4 +1,4 @@
-﻿namespace Game.Services.InstantiatingViews.Creators
+﻿namespace Game.Factories.View
 {
     public enum EGameViewType : ushort
     {

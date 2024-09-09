@@ -1,6 +1,5 @@
 ﻿using Core.Services.Scenes.Impls;
 using Project.Windows;
-using UnityEngine;
 using Zenject;
 
 namespace Installers.Project
@@ -16,7 +15,6 @@ namespace Installers.Project
 
         private void SetSettings()
         {
-            Application.targetFrameRate = 60;
             SignalBusInstaller.Install(Container); 
         }
 

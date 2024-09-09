@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: GameDatabaseInstaller
   m_EditorClassIdentifier: 
   gameModelDao: {fileID: 11400000, guid: fd5c681b12db57c48a0bf48fffba7c08, type: 2}
+  playerSettingDao: {fileID: 11400000, guid: b856e298fb1c509439adc016dfb0d4d2, type: 2}
+  cameraSettingsDao: {fileID: 11400000, guid: 6226eb68295658e42b9606df3ec3489f, type: 2}

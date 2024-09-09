@@ -1,5 +1,5 @@
 ﻿using System;
-using Game.Services.InstantiatingViews.Creators;
+using Game.Factories.View;
 using UnityEngine;
 
 namespace Databases.GameModels
