@@ -23,7 +23,6 @@ namespace Game.Services.InstantiatingViews.Creators.Impls
         {
             var playerModel = new PlayerModel(
                 view.transform,
-                view.CollisionTrigger,
                 view.PickingTransform
             );
             _playerModelDataHolder.SetModel(playerModel);

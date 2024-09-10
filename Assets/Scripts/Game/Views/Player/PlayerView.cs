@@ -2,7 +2,6 @@
 using Game.Components;
 using Game.Models.Abstract;
 using UniRx;
-using UniRx.Triggers;
 using UnityEngine;
 
 namespace Game.Views.Player
@@ -12,12 +11,9 @@ namespace Game.Views.Player
         [SerializeField] private Rigidbody playerRigidbody;
         [SerializeField] private RotatableComponent rotatableComponent;
         [SerializeField] private PlayerAnimationComponent playerAnimationComponent;
-        [SerializeField] private ObservableCollisionTrigger collisionTrigger;
         [SerializeField] private Transform pickingTransform;
 
         public Transform PickingTransform => pickingTransform;
-        
-        public ObservableCollisionTrigger CollisionTrigger => collisionTrigger;
 
         private void OnVelocityChanged(Vector3 value)
         {

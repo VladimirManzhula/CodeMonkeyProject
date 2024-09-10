@@ -18,17 +18,13 @@ namespace Game.Models.Players.Impls
 
         public Transform Transform { get; }
         public Transform PickingTransform { get; }
-
-        public ObservableCollisionTrigger CollisionTrigger { get; }
         
         public PlayerModel(
             Transform transform,
-            ObservableCollisionTrigger collisionTrigger,
             Transform pickingTransform
         )
         {
             Transform = transform;
-            CollisionTrigger = collisionTrigger;
             PickingTransform = pickingTransform;
         }
     }
