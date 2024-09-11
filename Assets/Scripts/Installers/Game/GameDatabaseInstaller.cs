@@ -1,6 +1,10 @@
 ﻿using Core.Exceptions.ZenjectUtil.Database;
 using Databases.CameraSettings;
 using Databases.CameraSettings.Impls;
+using Databases.EndurableModels;
+using Databases.EndurableModels.Impls;
+using Databases.EndurableTransformation;
+using Databases.EndurableTransformation.Impls;
 using Databases.GameModels;
 using Databases.GameModels.Impls;
 using Databases.Players;
@@ -19,12 +23,16 @@ namespace Installers.Game
         [SerializeField] private GameModelDao gameModelDao;
         [SerializeField] private PlayerSettingDao playerSettingDao;
         [SerializeField] private CameraSettingsDao cameraSettingsDao;
+        [SerializeField] private EndurableModelsDao endurableModelsDao;
+        [SerializeField] private EndurableTransformationSettingDao endurableTransformationSettingDao;
         
         public override void InstallBindings()
         {
             Container.BindDatabaseWithDao<IGameModelDao, GameModelBase>(gameModelDao);
             Container.BindDatabaseWithDao<IPlayerSettingDao, PlayerSettingBase>(playerSettingDao);
             Container.BindDatabaseWithDao<ICameraSettingsDao, CameraSettingsBase>(cameraSettingsDao);
+            Container.BindDatabaseWithDao<IEndurableModelsDao, EndurableModelsBase>(endurableModelsDao);
+            Container.BindDatabaseWithDao<IEndurableTransformationSettingDao, EndurableTransformationSettingBase>(endurableTransformationSettingDao);
         }
     }
 }

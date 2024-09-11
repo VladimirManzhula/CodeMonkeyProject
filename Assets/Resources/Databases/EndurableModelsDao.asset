@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5570ea12984558830cd47d19520547, type: 3}
+  m_Name: EndurableModelsDao
+  m_EditorClassIdentifier: 
+  vos:
+  - type: 1
+    endurableView: {fileID: 6922901943633639093, guid: 81e9fe7b3cd084242a088e945f531f38,
+      type: 3}
+    sprite: {fileID: 21300000, guid: 91e8fe3de9249fc44b7bdd8050062896, type: 3}
+  - type: 7
+    endurableView: {fileID: -585773242679816451, guid: fb403d1efda6baf4190c507841617408,
+      type: 3}
+    sprite: {fileID: 21300000, guid: c9f08c3c1ae2a364aaeaa3712540b1d4, type: 3}
+  - type: 2
+    endurableView: {fileID: -4278404760595779811, guid: 44325c67017631342b5f02792113e57b,
+      type: 3}
+    sprite: {fileID: 21300000, guid: da2d04fe27b94e34ea0b624569b48a6f, type: 3}
+  - type: 6
+    endurableView: {fileID: 4401544450236354885, guid: 17cb28a1a37fd7f44ae6e1ad2aa9da78,
+      type: 3}
+    sprite: {fileID: 21300000, guid: 549cb4f2b86d1b84d8cd41c1cfde26c8, type: 3}
+  - type: 3
+    endurableView: {fileID: 241419718853344497, guid: bc49891f572f1164e9938f845ec37ab0,
+      type: 3}
+    sprite: {fileID: 21300000, guid: 77b28124b8bda494381c80bd5aa42c22, type: 3}
+  - type: 4
+    endurableView: {fileID: -641074703215930343, guid: 259702638197d9246bfc6f2b0fe88c09,
+      type: 3}
+    sprite: {fileID: 21300000, guid: e1c23b5aded59d84da30738d3267a6c9, type: 3}
+  - type: 5
+    endurableView: {fileID: 6186568928863963994, guid: 44b7e90f95929c04c8394768d8bd1d14,
+      type: 3}
+    sprite: {fileID: 21300000, guid: bee24f07c57157e45a946eed3bfe8b84, type: 3}
+  - type: 9
+    endurableView: {fileID: 3697697684132846719, guid: bef65092c97a4f54c84b8e99c81ba917,
+      type: 3}
+    sprite: {fileID: 21300000, guid: aa1bacc24dde76e47b2ec0dd4e82385b, type: 3}
+  - type: 10
+    endurableView: {fileID: 8754732863471536538, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
+      type: 3}
+    sprite: {fileID: 21300000, guid: f1f50c7ef90b19741b26f2040806cf56, type: 3}
+  - type: 11
+    endurableView: {fileID: -7949923824218152421, guid: 0df961a7e3870b44f9bbce7bdf930613,
+      type: 3}
+    sprite: {fileID: 21300000, guid: 713ea9afa60dd6e4ebf6503a33e8cc99, type: 3}
+  - type: 12
+    endurableView: {fileID: -281817108867713480, guid: c0c9afd619b40914a8f625c0535e2284,
+      type: 3}
+    sprite: {fileID: 21300000, guid: 3928afb5321bb3d489bbd4ac581b29a2, type: 3}
+  - type: 13
+    endurableView: {fileID: -7949923824218152421, guid: 0df961a7e3870b44f9bbce7bdf930613,
+      type: 3}
+    sprite: {fileID: 0}

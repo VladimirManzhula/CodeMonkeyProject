@@ -1,5 +1,5 @@
 ﻿using Game.DataHolders;
-using Game.Factories.View;
+using Game.Factories;
 using Game.Models.Players.Impls;
 using Game.Views.Player;
 

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9ac929285e4a7ca6d8f419319c33aa, type: 3}
+  m_Name: EndurableTransformationSettingDao
+  m_EditorClassIdentifier: 
+  vos:
+  - from: 1
+    to: 7
+    transformationType: 1
+    countInteractions: 3
+  - from: 4
+    to: 5
+    transformationType: 1
+    countInteractions: 4
+  - from: 2
+    to: 6
+    transformationType: 1
+    countInteractions: 2
+  - from: 9
+    to: 10
+    transformationType: 2
+    countInteractions: 5
+  - from: 10
+    to: 11
+    transformationType: 2
+    countInteractions: 8
