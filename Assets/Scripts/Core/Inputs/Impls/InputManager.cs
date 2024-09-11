@@ -1,6 +1,7 @@
 ﻿using Databases.Keyboard;
 using Databases.Players;
 using Game.DataHolders;
+using Game.Services.InteractObjects;
 using UnityEngine;
 using Zenject;
 
@@ -11,16 +12,19 @@ namespace Core.Inputs.Impls
         private readonly IKeyboardDatabase _keyboardDatabase;
         private readonly IPlayerModelDataHolder _playerModelDataHolder;
         private readonly IPlayerSettingBase _playerSettingBase;
+        private readonly IInteractObjectService _interactObjectService;
 
         public InputManager(
             IKeyboardDatabase keyboardDatabase,
             IPlayerModelDataHolder playerModelDataHolder,
-            IPlayerSettingBase playerSettingBase
+            IPlayerSettingBase playerSettingBase,
+            IInteractObjectService interactObjectService
         )
         {
             _keyboardDatabase = keyboardDatabase;
             _playerModelDataHolder = playerModelDataHolder;
             _playerSettingBase = playerSettingBase;
+            _interactObjectService = interactObjectService;
         }
 
         public void Tick()
@@ -29,8 +33,9 @@ namespace Core.Inputs.Impls
                 return;*/
             
             ProcessMovement();
+            ProcessInteract();
         }
-        
+
         private void ProcessMovement()
         {
             var velocity = Vector3.zero;
@@ -46,6 +51,12 @@ namespace Core.Inputs.Impls
             velocity = velocity.normalized * _playerSettingBase.Velocity;
 
             _playerModelDataHolder.Model.SetVelocityDirection = velocity;
+        }
+
+        private void ProcessInteract()
+        {
+            if (Input.GetKey(_keyboardDatabase.Interact))
+                _interactObjectService.Execute();
         }
     }
 }

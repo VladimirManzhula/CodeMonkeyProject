@@ -1,5 +1,5 @@
 ﻿using Game.DataHolders;
-using Game.Factories.View;
+using Game.Factories;
 using Game.Models.Cameras.Impls;
 using Game.Views.Camera;
 

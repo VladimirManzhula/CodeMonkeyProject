@@ -1,6 +1,6 @@
 ﻿using System;
 using Core.Exceptions;
-using Game.Factories.View;
+using Game.Factories;
 using Game.Views;
 
 namespace Databases.GameModels.Impls

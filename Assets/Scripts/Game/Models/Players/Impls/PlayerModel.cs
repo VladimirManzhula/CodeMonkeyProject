@@ -1,10 +1,10 @@
-﻿using UniRx;
-using UniRx.Triggers;
+﻿using Game.Models.Abstract;
+using UniRx;
 using UnityEngine;
 
 namespace Game.Models.Players.Impls
 {
-    public class PlayerModel : IPlayerModel
+    public class PlayerModel : AStorableModel, IPlayerModel
     {
         private readonly Vector3ReactiveProperty _getVelocity = new(Vector3.zero);
         public IReadOnlyReactiveProperty<Vector3> GetVelocity => _getVelocity;
@@ -18,18 +18,16 @@ namespace Game.Models.Players.Impls
 
         public Transform Transform { get; }
         public Transform PickingTransform { get; }
-
-        public ObservableCollisionTrigger CollisionTrigger { get; }
         
         public PlayerModel(
             Transform transform,
-            ObservableCollisionTrigger collisionTrigger,
             Transform pickingTransform
         )
         {
             Transform = transform;
-            CollisionTrigger = collisionTrigger;
             PickingTransform = pickingTransform;
         }
+
+        protected override Transform GetStorableTransform() => PickingTransform;
     }
 }

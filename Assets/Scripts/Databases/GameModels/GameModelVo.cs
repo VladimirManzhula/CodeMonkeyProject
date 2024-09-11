@@ -1,5 +1,5 @@
 ﻿using System;
-using Game.Factories.View;
+using Game.Factories;
 using UnityEngine;
 
 namespace Databases.GameModels
