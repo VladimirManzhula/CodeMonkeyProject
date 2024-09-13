@@ -34,18 +34,19 @@ namespace Core.Inputs.Impls
             
             ProcessMovement();
             ProcessInteract();
+            ProcessInteractAlternative();
         }
 
         private void ProcessMovement()
         {
             var velocity = Vector3.zero;
-            if (Input.GetKey(_keyboardDatabase.MoveForward))
+            if (IsKey(_keyboardDatabase.MoveForward))
                 velocity.z += 1;
-            if (Input.GetKey(_keyboardDatabase.MoveBack))
+            if (IsKey(_keyboardDatabase.MoveBack))
                 velocity.z -= 1;
-            if (Input.GetKey(_keyboardDatabase.MoveRight))
+            if (IsKey(_keyboardDatabase.MoveRight))
                 velocity.x += 1;
-            if (Input.GetKey(_keyboardDatabase.MoveLeft))
+            if (IsKey(_keyboardDatabase.MoveLeft))
                 velocity.x -= 1;
 
             velocity = velocity.normalized * _playerSettingBase.Velocity;
@@ -55,8 +56,18 @@ namespace Core.Inputs.Impls
 
         private void ProcessInteract()
         {
-            if (Input.GetKey(_keyboardDatabase.Interact))
+            if (IsKeyDown(_keyboardDatabase.Interact))
                 _interactObjectService.Execute();
         }
+        
+        private void ProcessInteractAlternative()
+        {
+            if (IsKeyDown(_keyboardDatabase.InteractAlternative))
+                _interactObjectService.ExecuteAlternative();
+        }
+        
+        private static bool IsKey(KeyCode code) => Input.GetKey(code);
+        private static bool IsKeyDown(KeyCode code) => Input.GetKeyDown(code);
+        private static bool IsKeyUp(KeyCode code) => Input.GetKeyUp(code);
     }
 }

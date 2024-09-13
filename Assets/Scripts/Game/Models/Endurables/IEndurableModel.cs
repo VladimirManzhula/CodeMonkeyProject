@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Game.Models.Endurables
 {
-    public interface IEndurableModel : IDestroyableModel
+    public interface IEndurableModel : IDestroyableModel, IUiProgressableModel
     {
         EEndurableType Type { get; }
         

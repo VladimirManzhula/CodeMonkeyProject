@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4589716710238282923}
+  - component: {fileID: 1596209947038489532}
   - component: {fileID: 4817326211542387817}
   m_Layer: 0
   m_Name: StoringInteractableObjectView
@@ -65,6 +66,21 @@ Transform:
   - {fileID: 6636419842707355922}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1596209947038489532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4589716710238282922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d841e5cdfc4dc38d258909e9d41a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionTrigger: {fileID: 5472817643714364675}
+  interactableMaterialsChangeComponent: {fileID: 4817326211542387817}
+  storingTransform: {fileID: 6636419842707355922}
 --- !u!114 &4817326211542387817
 MonoBehaviour:
   m_ObjectHideFlags: 0

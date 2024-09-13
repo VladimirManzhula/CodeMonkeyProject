@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using Game.DataHolders;
 using Game.Views.InteractableObjects;
+using Zenject;
 
 namespace Game.Services.WorldCanvasLookAtCamera.Impls
 {
-    public class WorldCanvasLookAtCameraService : IWorldCanvasLookAtCameraService
+    public class WorldCanvasLookAtCameraService : IWorldCanvasLookAtCameraService, ILateTickable
     {
         private readonly ICameraModelDataHolder _cameraModelDataHolder;
         
@@ -25,10 +26,8 @@ namespace Game.Services.WorldCanvasLookAtCamera.Impls
         {
             var cameraForward = _cameraModelDataHolder.Model.Transform.forward;
 
-            for (var index = 0; index < _worldCanvases.Count; index++)
+            foreach (var worldCanvas in _worldCanvases)
             {
-                var worldCanvas = _worldCanvases[index];
-
                 switch (worldCanvas.LookAtCameraType)
                 {
                     case ELookAtCameraType.Forward:
@@ -38,7 +37,6 @@ namespace Game.Services.WorldCanvasLookAtCamera.Impls
                         worldCanvas.Canvas.transform.forward = -cameraForward;
                         break;
                 }
-                
             }
         }
     }

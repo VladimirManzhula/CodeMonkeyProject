@@ -5,13 +5,13 @@ using Game.Views.Player;
 
 namespace Game.Services.InstantiatingViews.Creators.Impls
 {
-    public class PlayerViewCreator : AViewCreator<PlayerView>
+    public class PlayerViewInitializer : AViewInitializer<PlayerView>
     {
         private readonly IPlayerModelDataHolder _playerModelDataHolder;
 
         protected override EGameViewType Type => EGameViewType.Player;
 
-        public PlayerViewCreator(
+        public PlayerViewInitializer(
             IGameViewFactory gameViewFactory,
             IPlayerModelDataHolder playerModelDataHolder
         ) : base(gameViewFactory)
@@ -19,7 +19,7 @@ namespace Game.Services.InstantiatingViews.Creators.Impls
             _playerModelDataHolder = playerModelDataHolder;
         }
 
-        protected override void OnViewCreated(PlayerView view)
+        protected override void OnViewInitializer(PlayerView view)
         {
             var playerModel = new PlayerModel(
                 view.transform,

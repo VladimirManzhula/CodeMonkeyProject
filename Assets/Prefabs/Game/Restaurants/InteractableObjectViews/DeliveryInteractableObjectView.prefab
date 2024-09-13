@@ -233,6 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4589716710238282923}
+  - component: {fileID: 8716493931771348362}
   - component: {fileID: 8690254175779776849}
   m_Layer: 0
   m_Name: DeliveryInteractableObjectView
@@ -258,6 +259,20 @@ Transform:
   - {fileID: 5767887920634770002}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8716493931771348362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4589716710238282922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429513403f35490e8e622565c81fa3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionTrigger: {fileID: 8754847991471593631}
+  interactableMaterialsChangeComponent: {fileID: 8690254175779776849}
 --- !u!114 &8690254175779776849
 MonoBehaviour:
   m_ObjectHideFlags: 0

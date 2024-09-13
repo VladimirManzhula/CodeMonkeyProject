@@ -10,6 +10,7 @@ namespace Databases.Keyboard.Impls
     {
         [Header("Control")]
         [SerializeField] private KeyCode interact;
+        [SerializeField] private KeyCode interactAlternative;
         
         [Header("Move")]
         [SerializeField] private KeyCode moveForward;
@@ -18,6 +19,7 @@ namespace Databases.Keyboard.Impls
         [SerializeField] private KeyCode moveRight;
 
         public KeyCode Interact => interact;
+        public KeyCode InteractAlternative => interactAlternative;
         public KeyCode MoveForward => moveForward;
         public KeyCode MoveBack => moveBack;
         public KeyCode MoveLeft => moveLeft;

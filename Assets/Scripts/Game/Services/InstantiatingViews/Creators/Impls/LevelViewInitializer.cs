@@ -8,7 +8,7 @@ using Game.Views.Levels.Impls;
 
 namespace Game.Services.InstantiatingViews.Creators.Impls
 {
-    public class LevelViewCreator : AViewCreator<LevelView>
+    public class LevelViewInitializer : AViewInitializer<LevelView>
     {
         private readonly ILevelModelDataHolder _levelModelDataHolder;
         private readonly IInteractObjectService _interactObjectService;
@@ -16,7 +16,7 @@ namespace Game.Services.InstantiatingViews.Creators.Impls
 
         protected override EGameViewType Type => EGameViewType.Level;
 
-        public LevelViewCreator(
+        public LevelViewInitializer(
             IGameViewFactory gameViewFactory,
             ILevelModelDataHolder levelModelDataHolder,
             IInteractObjectService interactObjectService,
@@ -28,7 +28,7 @@ namespace Game.Services.InstantiatingViews.Creators.Impls
             _worldCanvasLookAtCameraService = worldCanvasLookAtCameraService;
         }
 
-        protected override void OnViewCreated(LevelView view)
+        protected override void OnViewInitializer(LevelView view)
         {
             var models = _interactObjectService.CreateInteractableModels(view.InteractableObjectViews);
             var levelModel = new LevelModel(models);

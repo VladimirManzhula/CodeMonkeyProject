@@ -18,3 +18,8 @@ MonoBehaviour:
   endurableModelsDao: {fileID: 11400000, guid: 36a7c6a8e5b5e20488e4c2330272bc59, type: 2}
   endurableTransformationSettingDao: {fileID: 11400000, guid: 19ba90d6ca2f4534aae8fb0f7992bb0d,
     type: 2}
+  compositeEndurableSettingDao: {fileID: 11400000, guid: 13de21eef96deb24d870e7216d184d3a,
+    type: 2}
+  recipeSettingsDao: {fileID: 11400000, guid: 0e2631a2e1b200c4798f69d28b8300d9, type: 2}
+  intervalSpawningSettingDao: {fileID: 11400000, guid: 45cdae8164ea6a74296f69f84611c1f1,
+    type: 2}
