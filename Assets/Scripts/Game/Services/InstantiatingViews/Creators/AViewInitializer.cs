@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Game.Services.InstantiatingViews.Creators
 {
-    public abstract class AViewCreator<TView> : IViewCreator
+    public abstract class AViewInitializer<TView> : IViewInitializer
         where TView : MonoBehaviour
     {
         private readonly IGameViewFactory _gameViewFactory;
 
-        protected AViewCreator(
+        protected AViewInitializer(
             IGameViewFactory gameViewFactory
         )
         {
@@ -17,12 +17,12 @@ namespace Game.Services.InstantiatingViews.Creators
 
         protected abstract EGameViewType Type { get; }
 
-        public void Create()
+        public void Initializer()
         {
             var tView = _gameViewFactory.CreateByType<TView>(Type);
-            OnViewCreated(tView);
+            OnViewInitializer(tView);
         }
 
-        protected abstract void OnViewCreated(TView view);
+        protected abstract void OnViewInitializer(TView view);
     }
 }

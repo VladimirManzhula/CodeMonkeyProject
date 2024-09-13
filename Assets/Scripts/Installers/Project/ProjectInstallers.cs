@@ -1,4 +1,5 @@
-﻿using Core.Services.Scenes.Impls;
+﻿using Core.Providers.Impls;
+using Core.Services.Scenes.Impls;
 using Project.Windows;
 using Zenject;
 
@@ -9,6 +10,7 @@ namespace Installers.Project
         public override void InstallBindings()
         {
             SetSettings();
+            Bind();
             BindServices();
             BindWindows();
         }
@@ -16,6 +18,11 @@ namespace Installers.Project
         private void SetSettings()
         {
             SignalBusInstaller.Install(Container); 
+        }
+
+        private void Bind()
+        {
+            Container.BindInterfacesTo<TimeProvider>().AsSingle();
         }
 
         private void BindServices()

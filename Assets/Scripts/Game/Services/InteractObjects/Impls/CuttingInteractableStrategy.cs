@@ -1,23 +1,92 @@
 ﻿using System;
+using Databases.EndurableTransformation;
+using Game.DataHolders;
+using Game.Factories;
+using Game.Models.Endurables;
 using Game.Models.InteractableObjects.Impls;
+using Game.Services.Exchanges;
 using Game.Views.InteractableObjects.Impls;
+using UniRx;
 
 namespace Game.Services.InteractObjects.Impls
 {
     public class CuttingInteractableStrategy : AInteractableStrategy<CuttingInteractableObjectView,
         CuttingInteractableObjectModel>, IDisposable
     {
+        private readonly IPlayerModelDataHolder _playerModelDataHolder;
+        private readonly IExchangeService _exchangeService;
+        private readonly IEndurableFactory _endurableFactory;
+        private readonly IEndurableTransformationSettingBase _transformationSettingBase;
 
         public override EInteractableType Type => EInteractableType.Cutting;
-        
-        protected override CuttingInteractableObjectModel GetModel(CuttingInteractableObjectView view)
+
+        private IDisposable _endurableAppearDisposable = Disposable.Empty;
+
+        public CuttingInteractableStrategy(
+            IPlayerModelDataHolder playerModelDataHolder,
+            IExchangeService exchangeService,
+            IEndurableFactory endurableFactory,
+            IEndurableTransformationSettingBase endurableTransformationSettingBase
+        )
         {
-            throw new NotImplementedException();
+            _playerModelDataHolder = playerModelDataHolder;
+            _exchangeService = exchangeService;
+            _endurableFactory = endurableFactory;
+            _transformationSettingBase = endurableTransformationSettingBase;
         }
 
-        public void Dispose()
+        protected override CuttingInteractableObjectModel GetModel(CuttingInteractableObjectView view)
         {
-            throw new NotImplementedException();
+            var cuttingModel = new CuttingInteractableObjectModel(view)
+            {
+                StoringTransform = view.StoringTransform
+            };
+
+            void GetInteractionAction()
+            {
+                var playerModel = _playerModelDataHolder.Model;
+                _exchangeService.Execute(playerModel, cuttingModel);
+            }
+
+            void GetAlternativeInteraction()
+            {
+                var endurableModel = cuttingModel.EndurableModel.Value;
+                var endurableType = endurableModel.Type;
+                var isExistTransformation = _transformationSettingBase.TryFindTransformation(
+                    endurableType,
+                    out var vo
+                );
+
+                if (!isExistTransformation || vo.transformationType != ETransformationType.Cutting)
+                    return;
+
+                endurableModel.CurrentProgress.Value++;
+
+                if (endurableModel.CurrentProgress.Value < endurableModel.MaxProgress)
+                    return;
+
+                endurableModel.IsDestroyed.Value = true;
+                var newEndurableModel = _endurableFactory.CreateSimple(vo.to);
+                cuttingModel.SetEndurableModel(newEndurableModel);
+            }
+
+            void OnEndurableChanged(IEndurableModel endurableModel)
+            {
+                if (endurableModel == null || endurableModel.TransformationType != ETransformationType.Cutting)
+                {
+                    view.DisableProgressBar();
+                    return;
+                }
+
+                view.SubscribeOnProgress(cuttingModel.EndurableModel.Value);
+            }
+
+            cuttingModel.ExecutingAction = GetInteractionAction;
+            cuttingModel.AlternativeExecutingAction = GetAlternativeInteraction;
+            _endurableAppearDisposable = cuttingModel.EndurableModel.Subscribe(OnEndurableChanged);
+            return cuttingModel;
         }
+
+        public void Dispose() => _endurableAppearDisposable.Dispose();
     }
 }

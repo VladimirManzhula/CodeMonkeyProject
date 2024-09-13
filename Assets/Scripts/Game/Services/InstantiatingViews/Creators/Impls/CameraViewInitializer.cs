@@ -5,13 +5,13 @@ using Game.Views.Camera;
 
 namespace Game.Services.InstantiatingViews.Creators.Impls
 {
-    public class CameraViewCreator : AViewCreator<CameraView>
+    public class CameraViewInitializer : AViewInitializer<CameraView>
     {
         private readonly ICameraModelDataHolder _cameraModelDataHolder;
         
         protected override EGameViewType Type => EGameViewType.Camera;
 
-        public CameraViewCreator(
+        public CameraViewInitializer(
             IGameViewFactory gameViewFactory,
             ICameraModelDataHolder cameraModelDataHolder
         ) : base(gameViewFactory)
@@ -19,7 +19,7 @@ namespace Game.Services.InstantiatingViews.Creators.Impls
             _cameraModelDataHolder = cameraModelDataHolder;
         }
 
-        protected override void OnViewCreated(CameraView view)
+        protected override void OnViewInitializer(CameraView view)
         {
             var cameraModel = new CameraModel(view.transform);
             view.SubscribeOnPositionChanged(cameraModel);

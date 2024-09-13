@@ -16,13 +16,14 @@ namespace Game.Services.InteractObjects.Impls
         {
             _interactableStrategies = new IInteractableStrategy[strategies.Count];
 
-            for (var index = 0; index < strategies.Count; index++)
+            foreach (var strategy in strategies)
             {
-                var strategy = strategies[index];
                 var strategyIndex = (int)strategy.Type;
                 _interactableStrategies[strategyIndex] = strategy;
             }
         }
+        
+        private bool HasInteractableModels => _interactableModels.Count <= 0;
 
         public IInteractableObjectModel[] CreateInteractableModels(
             IInteractableObjectView[] interactableObjectViews
@@ -50,6 +51,9 @@ namespace Game.Services.InteractObjects.Impls
 
         public void Execute()
         {
+            if (HasInteractableModels)
+                return;
+            
             var model = GetLastInteractableObjectModel();
             model.ExecutingAction();
             
@@ -61,6 +65,9 @@ namespace Game.Services.InteractObjects.Impls
 
         public void ExecuteAlternative()
         {
+            if (HasInteractableModels)
+                return;
+            
             var lastInteractableObjectModel = GetLastInteractableObjectModel();
             lastInteractableObjectModel?.AlternativeExecutingAction();
             

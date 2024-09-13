@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287dc9b4f0904ef4ab12e11bb846a6cd, type: 3}
   m_Name: KeyboardDatabase
   m_EditorClassIdentifier: 
-  interact: 102
+  interact: 101
+  interactAlternative: 102
   moveForward: 119
   moveBack: 115
   moveLeft: 97

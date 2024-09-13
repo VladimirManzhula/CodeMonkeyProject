@@ -242,6 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4589716710238282923}
+  - component: {fileID: 7340197517813801631}
   - component: {fileID: 53241680878982002}
   m_Layer: 0
   m_Name: IntervalSpawningInteractableObjectView
@@ -268,6 +269,22 @@ Transform:
   - {fileID: 4274739944671549110}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7340197517813801631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4589716710238282922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f0d56fa5458482b92cf85829ae66f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionTrigger: {fileID: 1820117978692810814}
+  interactableMaterialsChangeComponent: {fileID: 53241680878982002}
+  startSpawningPoint: {fileID: 4274739944671549110}
+  spawningObject: 12
 --- !u!114 &53241680878982002
 MonoBehaviour:
   m_ObjectHideFlags: 0

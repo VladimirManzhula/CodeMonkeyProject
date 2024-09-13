@@ -6,17 +6,17 @@ namespace Game.Services.InstantiatingViews.Instantiating.Impls
 {
     public class InstantiatingViewsService : IInstantiatingViewsService, IInitializable
     {
-        private readonly List<IViewCreator> _viewCreators;
+        private readonly List<IViewInitializer> _viewInitializer;
 
-        public InstantiatingViewsService(List<IViewCreator> viewCreators)
+        public InstantiatingViewsService(List<IViewInitializer> viewInitializer)
         {
-            _viewCreators = viewCreators;
+            _viewInitializer = viewInitializer;
         }
 
         public void Initialize()
         {
-            foreach (var viewCreator in _viewCreators)
-                viewCreator.Create();
+            foreach (var viewInitializer in _viewInitializer)
+                viewInitializer.Initializer();
         }
     }
 }

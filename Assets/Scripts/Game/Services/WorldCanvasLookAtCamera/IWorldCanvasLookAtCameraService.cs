@@ -1,9 +1,8 @@
 using Game.Views.InteractableObjects;
-using Zenject;
 
 namespace Game.Services.WorldCanvasLookAtCamera
 {
-    public interface IWorldCanvasLookAtCameraService : ILateTickable
+    public interface IWorldCanvasLookAtCameraService
     {
         void Add(IWorldCanvasView view);
 

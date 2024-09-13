@@ -1,12 +1,15 @@
 ﻿using Core.Inputs.Impls;
+using Game.CompositeFood.Impls;
 using Game.DataHolders.Impls;
 using Game.Factories.Impls;
 using Game.Services.CameraFollowing;
 using Game.Services.CameraFollowing.Impls;
+using Game.Services.Exchanges.Impls;
 using Game.Services.InstantiatingViews.Creators.Impls;
 using Game.Services.InstantiatingViews.Instantiating.Impls;
 using Game.Services.InteractObjects.Impls;
 using Game.Services.PlayerInteractableCollisions.Impls;
+using Game.Services.Recipes.Impls;
 using Game.Services.WorldCanvasLookAtCamera.Impls;
 using Ui.Game;
 using Ui.Menu.Windows;
@@ -39,13 +42,16 @@ namespace Installers.Game
             Container.BindInterfacesTo<CameraFollowingService>().AsSingle();
             Container.BindInterfacesTo<PlayerInteractableCollisionsService>().AsSingle();
             Container.BindInterfacesTo<WorldCanvasLookAtCameraService>().AsSingle();
+            Container.BindInterfacesTo<ExchangeService>().AsSingle();
+            Container.BindInterfacesTo<CompositeFoodService>().AsSingle();
+            Container.BindInterfacesTo<RecipeService>().AsSingle();
         }
 
         private void BindViewCreators()
         {
-            Container.BindInterfacesTo<LevelViewCreator>().AsSingle();
-            Container.BindInterfacesTo<PlayerViewCreator>().AsSingle();
-            Container.BindInterfacesTo<CameraViewCreator>().AsSingle();
+            Container.BindInterfacesTo<LevelViewInitializer>().AsSingle();
+            Container.BindInterfacesTo<PlayerViewInitializer>().AsSingle();
+            Container.BindInterfacesTo<CameraViewInitializer>().AsSingle();
         }
 
         private void BindDataHolders()

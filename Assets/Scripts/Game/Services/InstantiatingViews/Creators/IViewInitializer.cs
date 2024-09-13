@@ -1,7 +1,7 @@
 namespace Game.Services.InstantiatingViews.Creators
 {
-    public interface IViewCreator
+    public interface IViewInitializer
     {
-        void Create();
+        void Initializer();
     }
 }

@@ -32,8 +32,7 @@ namespace Game.Services.CameraFollowing.Impls
             var playerTransform = _playerModelDataHolder.Model.Transform;
             var playerRelativeOffset = _cameraSettingsDatabase.PlayerRelativeOffset;
             var finalPosition = playerTransform.position + playerRelativeOffset;
-            var cameraModel = _cameraModelDataHolder.Model;
-            cameraModel.SetPosition = finalPosition;
+            _cameraModelDataHolder.Model.SetPosition = finalPosition;
         }
     }
 }
