@@ -6,7 +6,7 @@ namespace Project.Windows
 {
     public class LoadingWindow : WindowBase
     {
-        public override string Name => nameof(WindowNames.EProject.Loading);
+        public override string Name => nameof(WindowNames.EProjectType.Loading);
 
         protected override void AddControllers()
         {

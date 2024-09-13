@@ -21,7 +21,6 @@ namespace Game.Models.Endurables.Impls
         public IReactiveProperty<float> Height => _height;
 
         private readonly BoolReactiveProperty _isDestroyed = new();
-
         public IReactiveProperty<bool> IsDestroyed => _isDestroyed;
 
         public float MaxProgress { get; set; }

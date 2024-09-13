@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using SimpleUi;
+using Ui.Game.RecipeCollection;
+using UnityEngine;
 using Zenject;
 
 namespace Installers.Game
@@ -10,11 +12,14 @@ namespace Installers.Game
     public class GameUiPrefabsInstaller : ScriptableObjectInstaller
     {
         [SerializeField] private Canvas canvas;
+        [SerializeField] private RecipeCollectionView recipeCollectionView;
 
         public override void InstallBindings()
         {
-            //var canvasInstance = Container.InstantiatePrefabForComponent<Canvas>(canvas);
-            //var canvasTransform = canvasInstance.transform;
+            var canvasInstance = Container.InstantiatePrefabForComponent<Canvas>(canvas);
+            var canvasTransform = canvasInstance.transform;
+
+            Container.BindUiView<RecipeCollectionController, RecipeCollectionView>(recipeCollectionView, canvasTransform);
         }
     }
 }

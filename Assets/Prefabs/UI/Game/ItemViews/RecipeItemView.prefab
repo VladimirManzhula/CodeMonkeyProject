@@ -146,6 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6393667528316169396}
   - component: {fileID: 2599191916327530871}
+  - component: {fileID: 8365023002141138884}
   m_Layer: 5
   m_Name: IngredientsContainer
   m_TagString: Untagged
@@ -198,6 +199,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &8365023002141138884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476478029558303017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343553ca112f47dbbbe3e1d77d733165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1176479872417260256, guid: e4face2a82b075945aabd503192eb950, type: 3}
+  collectionRoot: {fileID: 6393667528316169396}
 --- !u!1 &2148498405449435139
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2039620435076491670}
   - component: {fileID: 8412087747090785322}
+  - component: {fileID: 5308759309345842531}
   m_Layer: 5
   m_Name: RecipeItemView
   m_TagString: Untagged
@@ -263,6 +279,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5308759309345842531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2148498405449435139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c543dfe0b5a4d9aab82d556c62b9d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeNameText: {fileID: 916630035539546493}
+  ingredientCollection: {fileID: 8365023002141138884}
 --- !u!1 &4048123154289153345
 GameObject:
   m_ObjectHideFlags: 0

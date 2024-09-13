@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5165751978073944678}
   - component: {fileID: 4370021023034986250}
+  - component: {fileID: 1074329037404712754}
   m_Layer: 5
   m_Name: RecipeCollectionView
   m_TagString: Untagged
@@ -46,6 +47,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446089961636751197}
   m_CullTransparentMesh: 1
+--- !u!114 &1074329037404712754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446089961636751197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b041b16c9e4066bea2105bd1c43ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeCollection: {fileID: 8713807887641954276}
 --- !u!1 &3379984522034388848
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2713606015786063467}
   - component: {fileID: 2444768704287610724}
+  - component: {fileID: 8713807887641954276}
   m_Layer: 5
   m_Name: RecipeContainer
   m_TagString: Untagged
@@ -108,6 +123,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &8713807887641954276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3379984522034388848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5017b1790040f7a18e6cd9689bf8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5308759309345842531, guid: 8bd9fe2a2416e074ba52153f89cde46e, type: 3}
+  collectionRoot: {fileID: 2713606015786063467}
 --- !u!1 &7749967574965933910
 GameObject:
   m_ObjectHideFlags: 0

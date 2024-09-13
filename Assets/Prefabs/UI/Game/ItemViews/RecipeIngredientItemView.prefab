@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7555760253818438866}
   - component: {fileID: 778927453052864336}
+  - component: {fileID: 1176479872417260256}
   m_Layer: 5
   m_Name: RecipeIngredientItemView
   m_TagString: Untagged
@@ -57,6 +58,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1176479872417260256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172617746391476939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b35ab1b3794bf8a1273f458766f273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 2792743906321550888}
 --- !u!1 &4970308940403400096
 GameObject:
   m_ObjectHideFlags: 0
