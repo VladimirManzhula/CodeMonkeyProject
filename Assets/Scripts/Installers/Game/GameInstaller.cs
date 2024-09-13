@@ -2,7 +2,6 @@
 using Game.CompositeFood.Impls;
 using Game.DataHolders.Impls;
 using Game.Factories.Impls;
-using Game.Services.CameraFollowing;
 using Game.Services.CameraFollowing.Impls;
 using Game.Services.Exchanges.Impls;
 using Game.Services.InstantiatingViews.Creators.Impls;
@@ -12,7 +11,7 @@ using Game.Services.PlayerInteractableCollisions.Impls;
 using Game.Services.Recipes.Impls;
 using Game.Services.WorldCanvasLookAtCamera.Impls;
 using Ui.Game;
-using Ui.Menu.Windows;
+using Ui.Game.Windows;
 using Zenject;
 
 namespace Installers.Game
@@ -27,6 +26,7 @@ namespace Installers.Game
             BindDataHolders();
             BindFactories();
             BindStrategies();
+            BindWindows();
         }
 
         private void BindManagers()
@@ -77,6 +77,11 @@ namespace Installers.Game
             Container.BindInterfacesTo<FryingInteractableStrategy>().AsSingle();
             Container.BindInterfacesTo<IntervalSpawningInteractableStrategy>().AsSingle();
             Container.BindInterfacesTo<DeliveryInteractableStrategy>().AsSingle();
+        }
+        
+        private void BindWindows()
+        {
+            Container.BindInterfacesAndSelfTo<RecipeCollectionWindow>().AsSingle();
         }
     }
 }

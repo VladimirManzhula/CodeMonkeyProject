@@ -9,7 +9,7 @@ namespace Game.Views.InteractableObjects.Impls
     public class CuttingInteractableObjectView : AInteractableObjectView, IWorldCanvasView
     {
         private const string CUT_TRIGGER = "Cut";
-        private static readonly int _cut = Animator.StringToHash(CUT_TRIGGER);
+        private readonly int _cut = Animator.StringToHash(CUT_TRIGGER);
 
         [SerializeField] private Transform storingTransform;
         [SerializeField] private UiProgressableComponent progressableComponent;
