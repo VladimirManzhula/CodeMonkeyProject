@@ -13,6 +13,10 @@ namespace Ui.Game
             _signalBus = signalBus;
         }
 
-        public void Initialize() => _signalBus.OpenWindow<RecipeCollectionWindow>();
+        public void Initialize()
+        {
+            _signalBus.OpenWindow<RecipeCollectionWindow>();
+            _signalBus.OpenWindow<StartWindow>();
+        }
     }
 }

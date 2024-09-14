@@ -7,12 +7,13 @@ using Zenject;
 
 namespace Core.Inputs.Impls
 {
-    public class InputManager : IInputManager, ITickable
+    public class InputManager : IInputManager, IInitializable, ITickable
     {
         private readonly IKeyboardDatabase _keyboardDatabase;
         private readonly IPlayerModelDataHolder _playerModelDataHolder;
         private readonly IPlayerSettingBase _playerSettingBase;
         private readonly IInteractObjectService _interactObjectService;
+        private bool _isActiveInput;
 
         public InputManager(
             IKeyboardDatabase keyboardDatabase,
@@ -27,10 +28,21 @@ namespace Core.Inputs.Impls
             _interactObjectService = interactObjectService;
         }
 
+        public bool IsActiveInput
+        {
+            get => _isActiveInput;
+            set => _isActiveInput = value;
+        }
+
+        public void Initialize()
+        {
+            _isActiveInput = false;
+        }
+
         public void Tick()
         {
-            /*if (!IsActiveInput)
-                return;*/
+            if (!_isActiveInput)
+                return;
             
             ProcessMovement();
             ProcessInteract();
@@ -56,18 +68,24 @@ namespace Core.Inputs.Impls
 
         private void ProcessInteract()
         {
-            if (IsKeyDown(_keyboardDatabase.Interact))
-                _interactObjectService.Execute();
+            if (!IsKeyDown(_keyboardDatabase.Interact))
+                return;
+                
+            _interactObjectService.Execute();
         }
-        
+
         private void ProcessInteractAlternative()
         {
-            if (IsKeyDown(_keyboardDatabase.InteractAlternative))
-                _interactObjectService.ExecuteAlternative();
+            if (!IsKeyDown(_keyboardDatabase.InteractAlternative))
+                return;
+                
+            _interactObjectService.ExecuteAlternative();
         }
-        
+
         private static bool IsKey(KeyCode code) => Input.GetKey(code);
+
         private static bool IsKeyDown(KeyCode code) => Input.GetKeyDown(code);
+
         private static bool IsKeyUp(KeyCode code) => Input.GetKeyUp(code);
     }
 }
