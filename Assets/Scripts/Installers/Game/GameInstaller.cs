@@ -86,6 +86,7 @@ namespace Installers.Game
         private void BindWindows()
         {
             Container.BindInterfacesAndSelfTo<RecipeCollectionWindow>().AsSingle();
+            Container.BindInterfacesAndSelfTo<StartWindow>().AsSingle();
         }
     }
 }

@@ -15,3 +15,5 @@ MonoBehaviour:
   canvas: {fileID: 1769271335157688946, guid: 27a029bb4affb0b48aab4a136cc43a16, type: 3}
   recipeCollectionView: {fileID: 1074329037404712754, guid: 71992f2f1bcbeba48ba53e5a3924afc2,
     type: 3}
+  startView: {fileID: 2462047139520568954, guid: c97ab9cfd5a792f4a8ca124bf2e839f3,
+    type: 3}
