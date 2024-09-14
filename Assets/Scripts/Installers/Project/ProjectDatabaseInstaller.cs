@@ -1,4 +1,6 @@
 ﻿using Core.Exceptions.ZenjectUtil.Database;
+using Databases.Audio;
+using Databases.Audio.Impls;
 using Databases.Keyboard;
 using Databases.Keyboard.Impls;
 using UnityEngine;
@@ -13,10 +15,12 @@ namespace Installers.Project
     public class ProjectDatabaseInstaller : ScriptableObjectInstaller
     {
         [SerializeField] private KeyboardDatabase keyboardDatabase;
+        [SerializeField] private AudioSettingsDao audioSettingsDao;
         
         public override void InstallBindings()
         {
             Container.BindDatabase<IKeyboardDatabase>(keyboardDatabase);
+            Container.BindDatabaseWithDao<IAudioSettingsDao, AudioSettingsBase>(audioSettingsDao);
         }
     }
 }

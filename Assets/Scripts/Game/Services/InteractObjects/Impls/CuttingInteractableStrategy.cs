@@ -1,9 +1,11 @@
 ﻿using System;
+using Databases.Audio;
 using Databases.EndurableTransformation;
 using Game.DataHolders;
 using Game.Factories;
 using Game.Models.Endurables;
 using Game.Models.InteractableObjects.Impls;
+using Game.Services.Audio.Service;
 using Game.Services.Exchanges;
 using Game.Views.InteractableObjects.Impls;
 using UniRx;
@@ -17,6 +19,7 @@ namespace Game.Services.InteractObjects.Impls
         private readonly IExchangeService _exchangeService;
         private readonly IEndurableFactory _endurableFactory;
         private readonly IEndurableTransformationSettingBase _transformationSettingBase;
+        private readonly IAudioService _audioService;
 
         public override EInteractableType Type => EInteractableType.Cutting;
 
@@ -26,13 +29,15 @@ namespace Game.Services.InteractObjects.Impls
             IPlayerModelDataHolder playerModelDataHolder,
             IExchangeService exchangeService,
             IEndurableFactory endurableFactory,
-            IEndurableTransformationSettingBase endurableTransformationSettingBase
+            IEndurableTransformationSettingBase endurableTransformationSettingBase,
+            IAudioService audioService
         )
         {
             _playerModelDataHolder = playerModelDataHolder;
             _exchangeService = exchangeService;
             _endurableFactory = endurableFactory;
             _transformationSettingBase = endurableTransformationSettingBase;
+            _audioService = audioService;
         }
 
         protected override CuttingInteractableObjectModel GetModel(CuttingInteractableObjectView view)
@@ -50,6 +55,7 @@ namespace Game.Services.InteractObjects.Impls
 
             void GetAlternativeInteraction()
             {
+                _audioService.PlaySfx(ESoundType.Chop, view.transform.position);
                 var endurableModel = cuttingModel.EndurableModel.Value;
                 var endurableType = endurableModel.Type;
                 var isExistTransformation = _transformationSettingBase.TryFindTransformation(
