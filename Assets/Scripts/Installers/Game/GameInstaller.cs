@@ -2,6 +2,8 @@
 using Game.CompositeFood.Impls;
 using Game.DataHolders.Impls;
 using Game.Factories.Impls;
+using Game.Services.Audio.Service.Impls;
+using Game.Services.Audio.Sounds.Impls;
 using Game.Services.CameraFollowing.Impls;
 using Game.Services.Exchanges.Impls;
 using Game.Services.InstantiatingViews.Creators.Impls;
@@ -45,6 +47,8 @@ namespace Installers.Game
             Container.BindInterfacesTo<ExchangeService>().AsSingle();
             Container.BindInterfacesTo<CompositeFoodService>().AsSingle();
             Container.BindInterfacesTo<RecipeService>().AsSingle();
+            Container.BindInterfacesTo<AudioService>().AsSingle();
+            Container.BindInterfacesTo<PlayerFootStepSounds>().AsSingle();
         }
 
         private void BindViewCreators()

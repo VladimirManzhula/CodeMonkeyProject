@@ -1,17 +1,26 @@
-﻿using Game.CompositeFood;
+﻿using Databases.Audio;
+using Game.CompositeFood;
+using Game.DataHolders;
 using Game.Models.Abstract;
+using Game.Services.Audio.Service;
 
 namespace Game.Services.Exchanges.Impls
 {
     public class ExchangeService : IExchangeService
     {
         private readonly ICompositeFoodService _compositeFoodService;
+        private readonly IAudioService _audioService;
+        private readonly IPlayerModelDataHolder _playerModelDataHolder;
 
         public ExchangeService(
-            ICompositeFoodService compositeFoodService
+            ICompositeFoodService compositeFoodService,
+            IAudioService audioService,
+            IPlayerModelDataHolder playerModelDataHolder
         )
         {
             _compositeFoodService = compositeFoodService;
+            _audioService = audioService;
+            _playerModelDataHolder = playerModelDataHolder;
         }
 
         public void Execute(IStorableModel player, IStorableModel interactable)
@@ -25,6 +34,7 @@ namespace Game.Services.Exchanges.Impls
                 }
 
                 Exchange(player, interactable);
+                _audioService.PlaySfx(ESoundType.DropObject, _playerModelDataHolder.PlayerPosition);
             }
             else
             {
@@ -32,6 +42,7 @@ namespace Game.Services.Exchanges.Impls
                     return;
 
                 Exchange(interactable, player);
+                _audioService.PlaySfx(ESoundType.PickUpObject, _playerModelDataHolder.PlayerPosition);
             }
         }
 

@@ -1,5 +1,7 @@
-﻿using Game.DataHolders;
+﻿using Databases.Audio;
+using Game.DataHolders;
 using Game.Models.InteractableObjects.Impls;
+using Game.Services.Audio.Service;
 using Game.Views.InteractableObjects.Impls;
 
 namespace Game.Services.InteractObjects.Impls
@@ -8,13 +10,16 @@ namespace Game.Services.InteractObjects.Impls
         DestroyFoodInteractableObjectModel>
     {
         private readonly IPlayerModelDataHolder _playerModelDataHolder;
+        private readonly IAudioService _audioService;
         public override EInteractableType Type => EInteractableType.DestroyFood;
 
         public DestroyFoodIntractableStrategy(
-            IPlayerModelDataHolder playerModelDataHolder
+            IPlayerModelDataHolder playerModelDataHolder,
+            IAudioService audioService
         )
         {
             _playerModelDataHolder = playerModelDataHolder;
+            _audioService = audioService;
         }
 
         protected override DestroyFoodInteractableObjectModel GetModel(
@@ -33,6 +38,7 @@ namespace Game.Services.InteractObjects.Impls
                 
                 playerModel.ClearEndurableModel();
                 playerEndurableModel.IsDestroyed.Value = true;
+                _audioService.PlaySfx(ESoundType.Trash, view.transform.position);
             }
 
             model.ExecutingAction = GetInteractionAction;
