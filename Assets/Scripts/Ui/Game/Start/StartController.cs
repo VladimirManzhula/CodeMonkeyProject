@@ -2,6 +2,7 @@
 using Core.Inputs;
 using SimpleUi.Abstracts;
 using SimpleUi.Signals;
+using Ui.Game.Windows;
 using UniRx;
 using Zenject;
 
@@ -42,6 +43,8 @@ namespace Ui.Game.Start
             _intervalDisposable.Dispose();
             _signalBus.BackWindow();
             _inputManager.IsActiveInput = true;
+            
+            _signalBus.OpenWindow<RecipeCollectionWindow>();
         }
 
         public void Dispose() => _intervalDisposable?.Dispose();

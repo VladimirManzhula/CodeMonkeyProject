@@ -5,7 +5,8 @@
         public enum EGameType
         {
             Recipe,
-            Start
+            Start,
+            Pause
         }
     }
 }

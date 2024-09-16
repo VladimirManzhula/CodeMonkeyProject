@@ -28,8 +28,6 @@ namespace Game.Components
                 .Subscribe(OnDirectionChanged);
         }
 
-        private void OnDestroy() => _rotationDisposable.Dispose();
-
         private void OnEveryFixedUpdate(long l)
         {
             var dot = Vector3.Dot(transform.forward, _goalDirection);
@@ -41,6 +39,12 @@ namespace Game.Components
             }
                     
             _everyFixedUpdateDisposable.Dispose();
+        }
+
+        private void OnDestroy()
+        {
+            _rotationDisposable?.Dispose();
+            _everyFixedUpdateDisposable?.Dispose();
         }
     }
 }

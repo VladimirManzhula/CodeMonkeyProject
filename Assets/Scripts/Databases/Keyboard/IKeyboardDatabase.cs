@@ -10,5 +10,6 @@ namespace Databases.Keyboard
         KeyCode MoveBack { get; }
         KeyCode MoveLeft { get; }
         KeyCode MoveRight { get; }
+        KeyCode Pause { get; }
     }
 }

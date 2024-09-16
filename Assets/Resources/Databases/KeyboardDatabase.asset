@@ -18,3 +18,4 @@ MonoBehaviour:
   moveBack: 115
   moveLeft: 97
   moveRight: 100
+  pause: 27

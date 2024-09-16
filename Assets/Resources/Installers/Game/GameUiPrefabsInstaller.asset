@@ -17,3 +17,5 @@ MonoBehaviour:
     type: 3}
   startView: {fileID: 2462047139520568954, guid: c97ab9cfd5a792f4a8ca124bf2e839f3,
     type: 3}
+  pauseView: {fileID: 2056411828674185545, guid: da058ed9ea47b374591630544e076828,
+    type: 3}

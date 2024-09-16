@@ -17,6 +17,9 @@ namespace Databases.Keyboard.Impls
         [SerializeField] private KeyCode moveBack;
         [SerializeField] private KeyCode moveLeft;
         [SerializeField] private KeyCode moveRight;
+        
+        [Header("Menu")]
+        [SerializeField] private KeyCode pause;
 
         public KeyCode Interact => interact;
         public KeyCode InteractAlternative => interactAlternative;
@@ -24,5 +27,6 @@ namespace Databases.Keyboard.Impls
         public KeyCode MoveBack => moveBack;
         public KeyCode MoveLeft => moveLeft;
         public KeyCode MoveRight => moveRight;
+        public KeyCode Pause => pause;
     }
 }

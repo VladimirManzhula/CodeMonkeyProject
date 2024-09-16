@@ -1,7 +1,11 @@
-﻿using Databases.Keyboard;
+﻿using Core.Constants;
+using Core.Services.OpenWindow;
+using Databases.Keyboard;
 using Databases.Players;
 using Game.DataHolders;
 using Game.Services.InteractObjects;
+using SimpleUi.Signals;
+using Ui.Game.Windows;
 using UnityEngine;
 using Zenject;
 
@@ -13,19 +17,25 @@ namespace Core.Inputs.Impls
         private readonly IPlayerModelDataHolder _playerModelDataHolder;
         private readonly IPlayerSettingBase _playerSettingBase;
         private readonly IInteractObjectService _interactObjectService;
+        private readonly IOpenWindowService _openWindowService;
+        private readonly SignalBus _signalBus;
         private bool _isActiveInput;
 
         public InputManager(
             IKeyboardDatabase keyboardDatabase,
             IPlayerModelDataHolder playerModelDataHolder,
             IPlayerSettingBase playerSettingBase,
-            IInteractObjectService interactObjectService
+            IInteractObjectService interactObjectService,
+            IOpenWindowService openWindowService,
+            SignalBus signalBus
         )
         {
             _keyboardDatabase = keyboardDatabase;
             _playerModelDataHolder = playerModelDataHolder;
             _playerSettingBase = playerSettingBase;
             _interactObjectService = interactObjectService;
+            _openWindowService = openWindowService;
+            _signalBus = signalBus;
         }
 
         public bool IsActiveInput
@@ -47,6 +57,7 @@ namespace Core.Inputs.Impls
             ProcessMovement();
             ProcessInteract();
             ProcessInteractAlternative();
+            PressGameMenu();
         }
 
         private void ProcessMovement()
@@ -80,6 +91,24 @@ namespace Core.Inputs.Impls
                 return;
                 
             _interactObjectService.ExecuteAlternative();
+        }
+
+        private void PressGameMenu()
+        {
+            PressPause();
+        }
+
+        private void PressPause()
+        {
+            if (!IsKeyDown(_keyboardDatabase.Pause))
+                return;
+            
+            var isPauseWindowOpen = _openWindowService.IsWindowCurrentlyOpen(WindowNames.EGameType.Pause);
+            
+            if (isPauseWindowOpen)
+                return;
+            
+            _signalBus.OpenWindow<PauseWindow>();
         }
 
         private static bool IsKey(KeyCode code) => Input.GetKey(code);
