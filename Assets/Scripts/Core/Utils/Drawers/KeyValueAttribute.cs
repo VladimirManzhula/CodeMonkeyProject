@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-namespace Core.Exceptions.Drawers
+namespace Core.Utils.Drawers
 {
     public class KeyValueAttribute : PropertyAttribute
     {

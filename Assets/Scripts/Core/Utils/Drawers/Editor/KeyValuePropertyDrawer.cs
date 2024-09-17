@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Core.Exceptions.Drawers.Editor
+namespace Core.Utils.Drawers.Editor
 {
     [CustomPropertyDrawer(typeof(KeyValueAttribute))]
 	public class KeyValuePropertyDrawer : PropertyDrawer

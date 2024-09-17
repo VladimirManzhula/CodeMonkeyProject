@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Zenject;
 
-namespace Core.Exceptions.ZenjectUtil.Database
+namespace Core.Utils.ZenjectUtil.Database
 {
     public static class ResourceSubstitute
 	{

@@ -5,6 +5,7 @@
         public enum EMenuType
         {
             Menu,
+            Settings,
         }
     }
 }

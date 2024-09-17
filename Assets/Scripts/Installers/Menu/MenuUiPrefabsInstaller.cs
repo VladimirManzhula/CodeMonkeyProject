@@ -1,5 +1,6 @@
 ﻿using SimpleUi;
 using Ui.Menu.Menu;
+using Ui.Menu.Settings;
 using UnityEngine;
 using Zenject;
 
@@ -13,6 +14,7 @@ namespace Installers.Menu
     {
         [SerializeField] private Canvas canvas;
         [SerializeField] private MenuView menuView;
+        [SerializeField] private SettingsView settingsView;
 
         public override void InstallBindings()
         {
@@ -20,6 +22,7 @@ namespace Installers.Menu
             var canvasTransform = canvasInstance.transform;
 
             Container.BindUiView<MenuController, MenuView>(menuView, canvasTransform);
+            Container.BindUiView<SettingsController, SettingsView>(settingsView, canvasTransform);
         }
     }
 }

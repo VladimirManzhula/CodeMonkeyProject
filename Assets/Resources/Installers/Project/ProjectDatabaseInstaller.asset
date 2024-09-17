@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214cfa27824747f9b0d20151c89efb81, type: 3}
   m_Name: ProjectDatabaseInstaller
   m_EditorClassIdentifier: 
-  keyboardDatabase: {fileID: 11400000, guid: 50e251649259211419778b0fe6ac7641, type: 2}
+  keyboardDao: {fileID: 11400000, guid: 50e251649259211419778b0fe6ac7641, type: 2}
   audioSettingsDao: {fileID: 11400000, guid: 75ff01a99099c3b4793b8c640cd0c990, type: 2}

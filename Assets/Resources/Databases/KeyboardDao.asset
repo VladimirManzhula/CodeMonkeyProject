@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 287dc9b4f0904ef4ab12e11bb846a6cd, type: 3}
-  m_Name: KeyboardDatabase
+  m_Name: KeyboardDao
   m_EditorClassIdentifier: 
-  interact: 101
-  interactAlternative: 102
-  moveForward: 119
-  moveBack: 115
-  moveLeft: 97
-  moveRight: 100
-  pause: 27
+  keyboardVo:
+    interact: 101
+    interactAlternative: 102
+    moveForward: 119
+    moveBack: 115
+    moveLeft: 97
+    moveRight: 100
+    pause: 27
