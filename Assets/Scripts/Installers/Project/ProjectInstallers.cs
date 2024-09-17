@@ -1,5 +1,7 @@
 ﻿using Core.Providers.Impls;
 using Core.Services.Scenes.Impls;
+using Game.Services.DAO.Settings.Impls;
+using Game.Services.DAO.Settings.Services.Impls;
 using Project.Windows;
 using Zenject;
 
@@ -13,6 +15,7 @@ namespace Installers.Project
             Bind();
             BindServices();
             BindWindows();
+            BindDao();
         }
 
         private void SetSettings()
@@ -33,6 +36,16 @@ namespace Installers.Project
         private void BindWindows()
         {
             Container.BindInterfacesAndSelfTo<LoadingWindow>().AsSingle();
+        }
+        
+        private void BindDao()
+        {
+            //Settings
+            Container.BindInterfacesTo<SettingsDao>().AsSingle()
+                .WithArguments("Settings.json");
+            
+            Container.BindInitializableExecutionOrder<SettingsState>(-10000);
+            Container.BindInterfacesTo<SettingsState>().AsSingle();
         }
     }
 }

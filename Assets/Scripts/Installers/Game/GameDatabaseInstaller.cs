@@ -1,4 +1,4 @@
-﻿using Core.Exceptions.ZenjectUtil.Database;
+﻿using Core.Utils.ZenjectUtil.Database;
 using Databases.CameraSettings;
 using Databases.CameraSettings.Impls;
 using Databases.CompositeEndurables;

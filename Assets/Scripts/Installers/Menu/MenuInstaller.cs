@@ -20,6 +20,7 @@ namespace Installers.Menu
         private void BindWindows()
         {
             Container.BindInterfacesAndSelfTo<MenuWindow>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SettingsWindow>().AsSingle();
         }
     }
 }

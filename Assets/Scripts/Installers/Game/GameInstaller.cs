@@ -1,4 +1,5 @@
 ﻿using Core.Inputs.Impls;
+using Core.Services.OpenWindow.Impls;
 using Game.CompositeFood.Impls;
 using Game.DataHolders.Impls;
 using Game.Factories.Impls;
@@ -49,6 +50,7 @@ namespace Installers.Game
             Container.BindInterfacesTo<RecipeService>().AsSingle();
             Container.BindInterfacesTo<AudioService>().AsSingle();
             Container.BindInterfacesTo<PlayerFootStepSounds>().AsSingle();
+            Container.BindInterfacesTo<OpenWindowService>().AsSingle();
         }
 
         private void BindViewCreators()
@@ -87,6 +89,7 @@ namespace Installers.Game
         {
             Container.BindInterfacesAndSelfTo<RecipeCollectionWindow>().AsSingle();
             Container.BindInterfacesAndSelfTo<StartWindow>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PauseWindow>().AsSingle();
         }
     }
 }
