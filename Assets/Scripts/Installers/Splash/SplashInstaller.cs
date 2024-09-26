@@ -1,4 +1,4 @@
-﻿using Game.Services.DAO.Settings.Services.Impls;
+﻿using Game.Services.DAO.Settings.Keyboard.Services.Impls;
 using Ui.Splash;
 using Ui.Splash.Windows;
 using Zenject;
@@ -22,7 +22,7 @@ namespace Installers.Splash
 
         private void BindServices()
         {
-            Container.BindInterfacesTo<SettingsService>().AsSingle();
+            Container.BindInterfacesTo<KeyboardService>().AsSingle();
         }
 
         private void BindWindows()

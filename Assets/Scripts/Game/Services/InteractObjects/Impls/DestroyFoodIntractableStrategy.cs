@@ -1,7 +1,7 @@
 ﻿using Databases.Audio;
 using Game.DataHolders;
 using Game.Models.InteractableObjects.Impls;
-using Game.Services.Audio.Service;
+using Game.Services.DAO.Settings.Audio.Service;
 using Game.Views.InteractableObjects.Impls;
 
 namespace Game.Services.InteractObjects.Impls

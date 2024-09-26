@@ -69,7 +69,7 @@ namespace Game.Services.InteractObjects.Impls
                 return;
             
             var lastInteractableObjectModel = GetLastInteractableObjectModel();
-            lastInteractableObjectModel?.AlternativeExecutingAction();
+            lastInteractableObjectModel?.AlternativeExecutingAction?.Invoke();
             
             if(!lastInteractableObjectModel.IsViewAlternativeInteractionPossible)
                 return;

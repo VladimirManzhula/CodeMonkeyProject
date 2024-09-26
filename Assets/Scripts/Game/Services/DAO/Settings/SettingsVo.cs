@@ -1,6 +1,5 @@
 ﻿using System;
 using Databases.Keyboard;
-using Databases.Keyboard.Impls;
 
 namespace Game.Services.DAO.Settings
 {
@@ -8,5 +7,6 @@ namespace Game.Services.DAO.Settings
     public class SettingsVo
     {
         public KeyboardVo keyboardVo;
+        public AudioSettingsVo audioSettingsVo;
     }
 }

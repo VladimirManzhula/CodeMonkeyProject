@@ -1,5 +1,5 @@
 ﻿using System;
-using Game.Services.Audio.Sounds.Impls;
+using Game.Services.DAO.Settings.Audio.Sounds.Impls;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

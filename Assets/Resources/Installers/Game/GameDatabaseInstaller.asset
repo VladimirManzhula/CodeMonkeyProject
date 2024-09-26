@@ -23,4 +23,5 @@ MonoBehaviour:
   recipeSettingsDao: {fileID: 11400000, guid: 0e2631a2e1b200c4798f69d28b8300d9, type: 2}
   intervalSpawningSettingDao: {fileID: 11400000, guid: 45cdae8164ea6a74296f69f84611c1f1,
     type: 2}
-  audioSettingsDao: {fileID: 11400000, guid: 75ff01a99099c3b4793b8c640cd0c990, type: 2}
+  settingsImageSwitcherDao: {fileID: 11400000, guid: c5ebb6e4bc5cb0b48ab9f3abdc168e87,
+    type: 2}
