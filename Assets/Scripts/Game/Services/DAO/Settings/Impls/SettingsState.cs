@@ -1,6 +1,5 @@
 ﻿using Core.Utils.DAO;
 using Databases.Keyboard;
-using Databases.Keyboard.Impls;
 using UnityEngine;
 using Zenject;
 
@@ -29,7 +28,9 @@ namespace Game.Services.DAO.Settings.Impls
                         moveLeft = KeyCode.A,
                         moveRight = KeyCode.D,
                         pause = KeyCode.Escape,
-                    }
+                    },
+                    
+                    audioSettingsVo = new AudioSettingsVo {isMusic = true, isSound = true}
                 };
 
                 SetDirty();
@@ -40,6 +41,20 @@ namespace Game.Services.DAO.Settings.Impls
         }
 
         public KeyboardVo KeyboardVo => _vo.keyboardVo;
+        
+        public AudioSettingsVo GetAudioSettings() => _vo.audioSettingsVo;
+
+        public void SetAudioMusicSettings()
+        {
+            _vo.audioSettingsVo.isMusic = !_vo.audioSettingsVo.isMusic;
+            SetDirty();
+        }
+        
+        public void SetAudioSoundSettings()
+        {
+            _vo.audioSettingsVo.isSound = !_vo.audioSettingsVo.isSound;
+            SetDirty();
+        }
         
         protected override SettingsVo ConvertToState() => _vo;
     }

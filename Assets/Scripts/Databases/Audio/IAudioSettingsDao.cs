@@ -1,4 +1,4 @@
-using Game.Services.Audio.Sounds.Impls;
+using Game.Services.DAO.Settings.Audio.Sounds.Impls;
 
 namespace Databases.Audio
 {

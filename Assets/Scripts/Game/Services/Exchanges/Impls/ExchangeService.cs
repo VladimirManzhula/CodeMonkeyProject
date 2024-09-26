@@ -2,7 +2,7 @@
 using Game.CompositeFood;
 using Game.DataHolders;
 using Game.Models.Abstract;
-using Game.Services.Audio.Service;
+using Game.Services.DAO.Settings.Audio.Service;
 
 namespace Game.Services.Exchanges.Impls
 {

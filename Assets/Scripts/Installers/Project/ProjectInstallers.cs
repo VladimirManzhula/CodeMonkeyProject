@@ -1,7 +1,7 @@
 ﻿using Core.Providers.Impls;
 using Core.Services.Scenes.Impls;
+using Game.Services.DAO.Settings.Audio.Service.Impls;
 using Game.Services.DAO.Settings.Impls;
-using Game.Services.DAO.Settings.Services.Impls;
 using Project.Windows;
 using Zenject;
 
@@ -31,6 +31,7 @@ namespace Installers.Project
         private void BindServices()
         {
             Container.BindInterfacesTo<SceneService>().AsSingle();
+            Container.BindInterfacesTo<AudioEventService>().AsSingle();
         }
 
         private void BindWindows()

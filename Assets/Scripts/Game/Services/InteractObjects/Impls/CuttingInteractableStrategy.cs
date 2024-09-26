@@ -5,7 +5,7 @@ using Game.DataHolders;
 using Game.Factories;
 using Game.Models.Endurables;
 using Game.Models.InteractableObjects.Impls;
-using Game.Services.Audio.Service;
+using Game.Services.DAO.Settings.Audio.Service;
 using Game.Services.Exchanges;
 using Game.Views.InteractableObjects.Impls;
 using UniRx;
