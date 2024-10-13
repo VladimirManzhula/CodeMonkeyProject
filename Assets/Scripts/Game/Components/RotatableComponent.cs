@@ -43,8 +43,8 @@ namespace Game.Components
 
         private void OnDestroy()
         {
-            _rotationDisposable?.Dispose();
             _everyFixedUpdateDisposable?.Dispose();
+            _rotationDisposable?.Dispose();
         }
     }
 }
